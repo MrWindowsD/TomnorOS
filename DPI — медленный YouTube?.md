@@ -36,7 +36,7 @@
 
 1. Не рекомендую устанавливать сторонний VPN
 2. Развернуть свой VPN на ПК или [роутере](https://github.com/Waujito/youtubeUnblock), например при помощи [OpenVPN](https://habr.com/ru/articles/78101/). Где взять VPN сервер для подключения? [Тут](https://www.vpnjantit.com/free-openvpn)
-3. Установить GoodbyeDPI[https://github.com/ValdikSS/GoodbyeDPI] от ValdikSS. Отлично работает на системах Windows
+3. Установить [GoodbyeDPI](https://github.com/ValdikSS/GoodbyeDPI) от ValdikSS. Отлично работает на системах Windows
 4. Прокси [Byedpi](https://github.com/hufrea/byedpi) от hufrea
 5. Выше представлено два самых оптимальных вариантов. Можно установить прокси или какое-нибудь расширение для браузера, но это та ещё морока, к тому же часто платная, потому я такое движение не рекомендую
 
