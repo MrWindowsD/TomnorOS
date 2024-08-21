@@ -1,3 +1,5 @@
+![](https://github.com/MrWindowsD/TomnorOS/blob/main/image/header.gif)
+
 # DPI — медленный YouTube?
 
 В принципе про обход замедления YouTube уже много кто рассказал. Разберём частные случае и полёты.
@@ -24,7 +26,11 @@
 
 ## Немного подушим
 
-Посомтрим на логи самого YouTube через Wireshark, и обнаружим то, что пакеты просто блокируются и трафик не проходит должным образом — падает скорость. Но как это происходит, если YT видит толь raw ip пакеты? И тут подключается DPI, который на уровне TLS по [SNI](https://en.wikipedia.org/wiki/Server_Name_Indication), который не шифруется определяет к какому сайту мы хотим подключиться, на этому уровне и происходит замедление. Мы можем проверить это при помощи команды ``` curl --connect-to ::speedtest.selectel.ru https://manifest.googlevideo.com/100MB -k -o/dev/null ```, где
+Посомтрим на логи самого YouTube через Wireshark, и обнаружим то, что пакеты просто блокируются и трафик не проходит должным образом — падает скорость. Но как это происходит, если YT видит толь raw ip пакеты? И тут подключается DPI, который на уровне TLS по [SNI](https://en.wikipedia.org/wiki/Server_Name_Indication), который не шифруется определяет к какому сайту мы хотим подключиться, на этому уровне и происходит замедление. Мы можем проверить это при помощи команды 
+```cmd
+curl --connect-to ::speedtest.selectel.ru https://manifest.googlevideo.com/100MB -k -o/dev/null
+```
+где
 1) Мы можем подменить SNI
 2) -k флаг отключает проверку сертификатов
 3) Мы получаем низкую скорость или вовсе ошибку при подключение к googlevideo.com
@@ -39,6 +45,8 @@
 3. Установить [GoodbyeDPI](https://github.com/ValdikSS/GoodbyeDPI) от ValdikSS. Отлично работает на системах Windows
 4. Прокси [Byedpi](https://github.com/hufrea/byedpi) от hufrea
 5. Выше представлены самые оптимальные варианты. Можно установить прокси или какое-нибудь расширение для браузера, но это та ещё морока, к тому же часто платная, потому я такое движение не рекомендую
+
+![](https://github.com/MrWindowsD/TomnorOS/blob/main/image/hr_00000.png)
 
 ## Прочее
 1. Прокси под [Android](https://github.com/dovecoteescapee/ByeDPIAndroid) от hufrea
